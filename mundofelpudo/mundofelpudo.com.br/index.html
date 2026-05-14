@@ -15,13 +15,16 @@
     <meta name="twitter:title" content="Mundo Felpudo">
     <meta name="twitter:description" content="Clique aqui para acessar seu treinamento">
     <meta name="twitter:image" content="https://my-treasure-code.lovable.app/images/og-preview.png">
+  <style>
+    a[href*="chat.whatsapp.com"] { display: none !important; }
+  </style>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       function remover() {
-        document.querySelectorAll('a, button, section, div').forEach(function(el) {
-          if (el.innerText && el.innerText.trim().includes('grupo do WhatsApp')) {
-            el.style.display = 'none';
-          }
+        document.querySelectorAll('a[href*="chat.whatsapp.com"]').forEach(function(a) {
+          var pai = a.closest('section') || a.parentElement;
+          if (pai) pai.style.display = 'none';
+          a.style.display = 'none';
         });
       }
       new MutationObserver(remover).observe(document.body, { childList: true, subtree: true });
