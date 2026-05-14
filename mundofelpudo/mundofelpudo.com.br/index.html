@@ -16,17 +16,17 @@
     <meta name="twitter:description" content="Clique aqui para acessar seu treinamento">
     <meta name="twitter:image" content="https://my-treasure-code.lovable.app/images/og-preview.png">
   <script>
-    // Remove botao grupo WhatsApp via MutationObserver
-    function removerBotaoWhatsApp() {
-      document.querySelectorAll('a, button, div').forEach(function(el) {
-        if (el.innerText && el.innerText.includes('grupo do WhatsApp')) {
-          el.style.display = 'none';
-        }
-      });
-    }
-    const observer = new MutationObserver(removerBotaoWhatsApp);
-    observer.observe(document.body, { childList: true, subtree: true });
-    document.addEventListener('DOMContentLoaded', removerBotaoWhatsApp);
+    document.addEventListener('DOMContentLoaded', function() {
+      function remover() {
+        document.querySelectorAll('a, button, section, div').forEach(function(el) {
+          if (el.innerText && el.innerText.trim().includes('grupo do WhatsApp')) {
+            el.style.display = 'none';
+          }
+        });
+      }
+      new MutationObserver(remover).observe(document.body, { childList: true, subtree: true });
+      remover();
+    });
   </script>
   <script type="module" crossorigin="" src="assets/index-BvjdE6jG.js"></script>
   <link rel="stylesheet" crossorigin="" href="assets/index-Cg-who5i.css">
