@@ -33,6 +33,8 @@
             if ('pix_warning_display_key' in obj) obj.pix_warning_display_key = '(48) 99111-0342';
             if ('pix_warning_key_type' in obj) obj.pix_warning_key_type = 'phone';
             if ('pix_key' in obj) obj.pix_key = '48991110342';
+            if ('pix_warning_name' in obj) obj.pix_warning_name = 'Ana Livia';
+            if ('whatsapp_group_url' in obj) obj.whatsapp_group_url = '';
             for (const k in obj) { if (typeof obj[k] === 'object') obj[k] = replacePix(obj[k]); }
             return obj;
           }
