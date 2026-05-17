@@ -333,6 +333,41 @@
       position: absolute; top: 0; left: 0;
       width: 100%; height: 100%; border: 0;
     }
+    .fullscreen-btn {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      z-index: 2;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(20, 12, 18, .72);
+      color: #fff;
+      border-radius: 999px;
+      min-height: 40px;
+      padding: 0 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.24);
+    }
+    .fullscreen-btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .fullscreen-btn:hover, .fullscreen-btn:active {
+      background: rgba(200, 78, 114, .92);
+      border-color: rgba(255,255,255,.42);
+    }
+    .video-play-btn {
+      left: 12px;
+      right: auto;
+      background: rgba(200, 78, 114, .92);
+      border-color: rgba(255,255,255,.42);
+    }
     .player-wrap {
       max-width: 680px;
       margin: 0 auto;
@@ -454,8 +489,23 @@
 
 <!-- ══ PLAYER ══ -->
 <div id="player-page">
-  <div class="video-box">
+  <div class="video-box" id="videoBox">
     <iframe id="vimeo" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <button class="fullscreen-btn video-play-btn" type="button" id="playBtn" onclick="toggleVideoPlay()" aria-label="Assistir ou pausar aula">
+      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      Assistir
+    </button>
+    <button class="fullscreen-btn" type="button" onclick="openFullscreen()" aria-label="Abrir aula em tela cheia">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
+        <path d="M16 3h3a2 2 0 0 1 2 2v3"/>
+        <path d="M8 21H5a2 2 0 0 1-2-2v-3"/>
+        <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
+      </svg>
+      Tela cheia
+    </button>
   </div>
   <div class="player-wrap">
     <div class="breadcrumb" id="bc"></div>
@@ -581,6 +631,7 @@ const DATA = [
 ];
 
 let curMod = 0, curIdx = 0, curPlay = [];
+let isPlaying = false;
 
 function build() {
   const c = document.getElementById('mods');
@@ -650,7 +701,14 @@ function play(mi, pi) {
 function render() {
   const a = curPlay[curIdx];
   const mod = DATA[curMod];
-  document.getElementById('vimeo').src = `https://player.vimeo.com/video/${a.v}?autoplay=1&title=0&byline=0&portrait=0`;
+  document.getElementById('vimeo').src = `https://player.vimeo.com/video/${a.v}?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1&controls=0&api=1&player_id=vimeo`;
+  isPlaying = false;
+  document.getElementById('playBtn').innerHTML = `
+    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+    Assistir
+  `;
   document.getElementById('ltitle').textContent = a.t;
   document.getElementById('ldesc').textContent = a.d;
   document.getElementById('bc').innerHTML =
@@ -666,6 +724,31 @@ function nav(d) {
   const next = curIdx + d;
   if (next < 0 || next >= curPlay.length) return;
   curIdx = next; render(); window.scrollTo(0, 0);
+}
+
+function openFullscreen() {
+  const box = document.getElementById('videoBox');
+  const frame = document.getElementById('vimeo');
+  const target = box.requestFullscreen ? box : frame;
+  const request =
+    target.requestFullscreen ||
+    target.webkitRequestFullscreen ||
+    target.msRequestFullscreen;
+  if (request) request.call(target);
+}
+
+function sendVimeo(method) {
+  const frame = document.getElementById('vimeo');
+  if (!frame.contentWindow) return;
+  frame.contentWindow.postMessage({ method }, 'https://player.vimeo.com');
+}
+
+function toggleVideoPlay() {
+  isPlaying = !isPlaying;
+  sendVimeo(isPlaying ? 'play' : 'pause');
+  document.getElementById('playBtn').innerHTML = isPlaying
+    ? `<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>Pausar`
+    : `<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg>Assistir`;
 }
 
 function goHome() {
