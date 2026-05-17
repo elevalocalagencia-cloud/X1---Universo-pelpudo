@@ -727,14 +727,15 @@ function nav(d) {
 }
 
 function openFullscreen() {
-  const box = document.getElementById('videoBox');
+  sendVimeo('requestFullscreen');
   const frame = document.getElementById('vimeo');
-  const target = box.requestFullscreen ? box : frame;
-  const request =
-    target.requestFullscreen ||
-    target.webkitRequestFullscreen ||
-    target.msRequestFullscreen;
-  if (request) request.call(target);
+  const box = document.getElementById('videoBox');
+  if (frame.requestFullscreen) frame.requestFullscreen();
+  else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
+  else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
+  else if (box.requestFullscreen) box.requestFullscreen();
+  else if (box.webkitRequestFullscreen) box.webkitRequestFullscreen();
+  else if (box.msRequestFullscreen) box.msRequestFullscreen();
 }
 
 function sendVimeo(method) {
