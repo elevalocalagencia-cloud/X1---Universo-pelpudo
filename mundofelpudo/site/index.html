@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Mundo Felpudo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:    #FAF7F5;
+      --card:  #FFFFFF;
+      --bdr:   #E8E0DA;
+      --txt:   #2D1F14;
+      --sub:   #7A6B5E;
+      --pink:  #E0728C;
+      --pink2: #CC607A;
+      --grn:   #4A9E6B;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: 'Nunito', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ─── HEADER ─── */
+    .hdr {
+      height: 54px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--bdr);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      position: sticky;
+      top: 0;
+      z-index: 300;
+    }
+    .hdr-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--pink);
+    }
+    .back-btn {
+      display: none;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      color: var(--pink);
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      padding: 6px 0;
+      min-height: 44px;
+    }
+    .back-btn svg { width: 18px; height: 18px; }
+
+    /* ─── HERO ─── */
+    .hero {
+      width: 100%;
+      min-height: 260px;
+      background: #1a0f08 url('https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/heroes/9d5fd9e6-c52d-4d0a-8166-b661a42e0aea.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 20px;
+      position: relative;
+    }
+    .hero::after { content:''; position:absolute; inset:0; background:rgba(20,6,2,.48); }
+    .hero-inner { position: relative; z-index: 1; max-width: 520px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 99px;
+      padding: 5px 14px;
+      font-size: 0.75rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 6vw, 2.2rem);
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .hero-sub {
+      font-size: clamp(0.85rem, 3.5vw, 1rem);
+      color: rgba(255,255,255,.85);
+      line-height: 1.5;
+    }
+
+    /* ─── HOME PAGE ─── */
+    #home { display: block; }
+    #player-page { display: none; }
+
+    /* ─── CONTENT WRAP ─── */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px 14px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* ─── CARDS ─── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--bdr);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Welcome */
+    .welcome-card { padding: 22px 18px; text-align: center; }
+    .welcome-card .ico { font-size: 1.8rem; margin-bottom: 8px; }
+    .welcome-card h2 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+    .welcome-card p { font-size: 0.85rem; color: var(--sub); line-height: 1.65; }
+
+    /* PIX */
+    .pix-head {
+      background: var(--pink);
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 8px;
+      color: #fff; font-weight: 800; font-size: 0.82rem; letter-spacing: .04em;
+    }
+    .pix-head svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .pix-body { padding: 14px 16px; }
+    .pix-body p { font-size: 0.85rem; color: var(--sub); margin-bottom: 12px; line-height: 1.5; }
+    .pix-body p strong { color: var(--txt); }
+    .pix-btn {
+      width: 100%;
+      background: var(--pink);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background .15s;
+      min-height: 50px;
+    }
+    .pix-btn:hover, .pix-btn:active { background: var(--pink2); }
+    .pix-btn svg { width: 16px; height: 16px; }
+
+    /* Link buttons */
+    .lnk {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--bdr);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 0.87rem;
+      font-weight: 700;
+      color: var(--sub);
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      transition: background .12s;
+      min-height: 50px;
+    }
+    .lnk:hover, .lnk:active { background: #F1ECE8; }
+    .lnk svg { width: 17px; height: 17px; flex-shrink: 0; }
+    .lnk .ext { width: 13px; height: 13px; margin-left: auto; opacity: .5; }
+    .supplier-link {
+      background: #C84E72;
+      border-color: #B83D62;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(200, 78, 114, .24);
+    }
+    .supplier-link:hover, .supplier-link:active {
+      background: #B83D62;
+      border-color: #A83256;
+    }
+    .supplier-link .ext { opacity: .85; }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--bdr);
+      border-radius: 14px;
+      padding: 18px 10px;
+      text-align: center;
+    }
+    .stat svg { width: 26px; height: 26px; color: var(--sub); display: block; margin: 0 auto 6px; }
+    .stat-n { font-size: 1.6rem; font-weight: 800; color: var(--txt); line-height: 1; }
+    .stat-l { font-size: 0.72rem; color: var(--sub); margin-top: 3px; font-weight: 700; }
+
+    /* Section label */
+    .sec-label { font-size: 1rem; font-weight: 800; color: var(--txt); padding: 2px 2px; }
+
+    /* ─── MODULES ─── */
+    .mod-btn {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--bdr);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Nunito', sans-serif;
+      transition: background .12s, border-color .12s, box-shadow .12s;
+      min-height: 72px;
+      margin-bottom: 6px;
+    }
+    .mod-btn:hover, .mod-btn:active {
+      background: #F1ECE8;
+      border-color: #DECFC4;
+      box-shadow: 0 8px 22px rgba(90, 56, 35, .08);
+    }
+    .mod-btn.open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .mod-img {
+      width: 56px; height: 56px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--bdr);
+    }
+    .mod-info { flex: 1; min-width: 0; }
+    .mod-name { font-size: 0.88rem; font-weight: 800; color: var(--txt); line-height: 1.3; }
+    .mod-count { font-size: 0.72rem; color: var(--sub); margin-top: 3px; font-weight: 600; }
+    .chevron {
+      width: 20px; height: 20px;
+      color: var(--sub);
+      flex-shrink: 0;
+      transition: transform .22s ease;
+    }
+    .mod-btn.open .chevron { transform: rotate(180deg); }
+
+    /* Lessons list */
+    .lessons-list {
+      display: none;
+      background: var(--card);
+      border: 1px solid var(--bdr);
+      border-top: none;
+      border-radius: 0 0 14px 14px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+    .lessons-list.open { display: block; }
+
+    .lesson {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--bdr);
+      cursor: pointer;
+      transition: background .1s;
+      min-height: 58px;
+    }
+    .lesson:last-child { border-bottom: none; }
+    .lesson:hover, .lesson:active { background: #F1ECE8; }
+    .lesson.locked { cursor: default; opacity: .5; }
+    .lesson.locked:hover, .lesson.locked:active { background: transparent; }
+
+    .les-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #F1ECE8;
+      border: 1.5px solid var(--bdr);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 800;
+      color: var(--sub);
+      flex-shrink: 0;
+    }
+    .lesson:not(.locked):hover .les-num,
+    .lesson:not(.locked):active .les-num {
+      background: var(--pink); border-color: var(--pink); color: #fff;
+    }
+    .les-info { flex: 1; min-width: 0; }
+    .les-t { font-size: 0.85rem; font-weight: 700; color: var(--txt); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .les-d { font-size: 0.71rem; color: var(--sub); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .play-dot {
+      width: 32px; height: 32px;
+      background: var(--pink);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .play-dot svg { width: 12px; height: 12px; fill: #fff; margin-left: 2px; }
+    .lock-ic { font-size: 0.85rem; flex-shrink: 0; }
+    .soon-tag {
+      font-size: 0.63rem;
+      background: #FFF8E6;
+      border: 1px solid #F0D080;
+      color: #A07010;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ─── PLAYER PAGE ─── */
+    .video-box {
+      width: 100%;
+      background: #000;
+      position: relative;
+      padding-top: 56.25%;
+    }
+    .video-box iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    .player-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 14px 14px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.75rem; color: var(--sub);
+      flex-wrap: wrap;
+    }
+    .bc-link { cursor: pointer; }
+    .bc-link:hover { color: var(--pink); }
+    .lesson-title-big { font-size: 1.1rem; font-weight: 800; color: var(--txt); line-height: 1.3; }
+
+    .nav-bar {
+      background: var(--card);
+      border: 1px solid var(--bdr);
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-side {
+      display: flex; align-items: center; gap: 5px;
+      background: none; border: none;
+      color: var(--pink); font-weight: 800; font-size: 0.82rem;
+      cursor: pointer; font-family: 'Nunito', sans-serif;
+      min-height: 44px; padding: 0 4px;
+    }
+    .nav-side:disabled { opacity: .3; cursor: not-allowed; }
+    .nav-side svg { width: 16px; height: 16px; }
+    .nav-mid { font-size: 0.75rem; color: var(--sub); font-weight: 700; }
+
+    .desc-card { padding: 16px; }
+    .desc-card h3 { font-size: 0.87rem; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .desc-card p { font-size: 0.82rem; color: var(--sub); line-height: 1.65; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <button class="back-btn" id="backBtn" onclick="goHome()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+    Voltar
+  </button>
+  <div class="hdr-logo">Mundo Felpudo ✨</div>
+  <div style="width:64px"></div>
+</header>
+
+<!-- ══ HOME ══ -->
+<div id="home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🎓 Área do Aluno</div>
+      <h1 class="hero-title">Bem-vinda ao Mundo Felpudo ✨</h1>
+      <p class="hero-sub">Sua jornada para transformar fio felpudo em peças lucrativas começa aqui</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- WELCOME -->
+    <div class="card welcome-card">
+      <div class="ico">🩷</div>
+      <h2>Que bom ter você aqui! 💛</h2>
+      <p>Este curso foi feito com muito carinho para te ensinar, passo a passo, a criar peças lindas com fio felpudo e transformar essa arte em uma fonte de renda real. Assista às aulas no seu ritmo e veja suas mãos criarem verdadeiras obras de arte. 🧶</p>
+    </div>
+
+    <!-- PIX -->
+    <div class="card">
+      <div class="pix-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        CHAVE PIX OFICIAL
+      </div>
+      <div class="pix-body">
+        <p>Nossa chave PIX oficial é <strong>(67) 98151-2440</strong>. O pagamento deve ser feito para <strong>Ana Livia</strong>.</p>
+        <button class="pix-btn" id="pixBtn" onclick="copyPix()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          COPIAR CHAVE PIX OFICIAL
+        </button>
+      </div>
+    </div>
+
+    <!-- FORNECEDORES -->
+    <a class="lnk supplier-link" href="https://drive.google.com/file/d/1pesY3VbfadMkzq6ifBo_MI2-CNprcoxt/view?usp=sharing" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Lista de Fornecedores
+      <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <div class="stat-n">5</div>
+        <div class="stat-l">Módulos</div>
+      </div>
+      <div class="stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+        <div class="stat-n">88</div>
+        <div class="stat-l">Videoaulas</div>
+      </div>
+    </div>
+
+    <div class="sec-label">Módulos do Curso</div>
+
+    <!-- MODULES -->
+    <div id="mods"></div>
+
+  </div>
+</div>
+
+<!-- ══ PLAYER ══ -->
+<div id="player-page">
+  <div class="video-box">
+    <iframe id="vimeo" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="player-wrap">
+    <div class="breadcrumb" id="bc"></div>
+    <div class="lesson-title-big" id="ltitle"></div>
+    <div class="nav-bar">
+      <button class="nav-side" id="btnPrev" onclick="nav(-1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Anterior
+      </button>
+      <span class="nav-mid" id="navPos"></span>
+      <button class="nav-side" id="btnNext" onclick="nav(1)">
+        Próxima
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="card desc-card">
+      <h3>📖 Sobre esta aula</h3>
+      <p id="ldesc"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  { name:"Vídeo Aulas — Fio Felpudo", img:"https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/7b991036-bdd5-4e12-a1b4-0575fc0e8017.jpg", lock:false, aulas:[
+    {n:1,t:"Flor de Lotus Iluminada",v:"1173034525",d:"Crie uma flor de lótus com iluminação embutida para decoração"},
+    {n:2,t:"Vaso de Lírio do Vale",v:"1173034704",d:"Crie delicados lírios do vale em miniatura para vasinhos"},
+    {n:3,t:"Luminária de Flor",v:"1173034893",d:"Transforme fio felpudo em uma luminária floral funcional e encantadora"},
+    {n:4,t:"Flor de Lírio",v:"1173035095",d:"Aprenda a modelar lírios elegantes com pétalas detalhadas"},
+    {n:5,t:"Lavanda",v:"1173030662",d:"Técnica para criar ramos de lavanda realistas com fio felpudo"},
+    {n:6,t:"Vaso Flor Tulipa",v:"1173034211",d:"Aprenda a montar um lindo vaso com tulipas de fio felpudo passo a passo"},
+    {n:7,t:"Vaso Flor de Girassol",v:"1173034357",d:"Monte um vaso decorativo com girassóis realistas de fio felpudo"},
+    {n:8,t:"Orquídea",v:"1173031605",d:"Crie orquídeas sofisticadas perfeitas para presente e decoração"},
+    {n:9,t:"Vasos de Tulipas",v:"1173032498",d:"Arranjo completo de vasos com tulipas coloridas de fio felpudo"},
+    {n:10,t:"Vaso de Cravo",v:"1173032330",d:"Monte cravos realistas com pétalas delicadas em fio felpudo"},
+    {n:11,t:"Vasinho de Tulipa + Abelinha",v:"1173032162",d:"Vasinho fofo de tulipa com uma abelha decorativa em miniatura"},
+    {n:12,t:"Vasinho de Tulipa Fofa",v:"1173032078",d:"Versão fofa e compacta de tulipa em vasinho decorativo"},
+    {n:13,t:"Vários Modelos",v:"1173031964",d:"Aula especial com múltiplos modelos e técnicas variadas"},
+    {n:14,t:"Tulipas",v:"1173031911",d:"Domine a técnica de criar tulipas perfeitas com fio felpudo"},
+    {n:15,t:"Tulipa com 5 Asas",v:"1173031856",d:"Modelo especial de tulipa com 5 pétalas abertas e elegantes"},
+    {n:16,t:"Suculentas",v:"1173031748",d:"Crie suculentas realistas que nunca precisam de água"},
+    {n:17,t:"Ramos de Flores",v:"1173031694",d:"Arranjos de ramos florais para buquês e decoração"},
+    {n:18,t:"Orquídea v2",v:"1173035236",d:"Nova técnica para orquídeas com detalhes aprimorados"},
+    {n:19,t:"Narcissus com Caules",v:"1173031511",d:"Flores de narciso com caules longos e folhagem natural"},
+    {n:20,t:"Mini Vaso de Hortênsia",v:"1173031363",d:"Mini vaso encantador com hortênsias delicadas"},
+    {n:21,t:"Mini Cesta de Lótus",v:"1173031287",d:"Cestinha decorativa com flores de lótus em miniatura"},
+    {n:22,t:"Mini Buquê de Flores",v:"1173031245",d:"Buquê compacto perfeito para lembrancinhas e presentes"},
+    {n:23,t:"Margarida Azul",v:"1173031156",d:"Margaridas azuis vibrantes com técnica de pétalas arredondadas"},
+    {n:24,t:"Lírios Amarelos",v:"1173031110",d:"Lírios em tom amarelo ouro com folhagem natural"},
+    {n:25,t:"Lírio com Hastes de Chenille",v:"1173030979",d:"Técnica especial usando hastes de chenille para lírios"},
+    {n:26,t:"Limão Decorativo",v:"1173030725",d:"Peça decorativa em formato de limão com acabamento realista"},
+    {n:27,t:"Lavanda v2",v:"1173030055",d:"Técnica avançada para ramos de lavanda em arranjo"},
+    {n:28,t:"Jarrinho Girassol",v:"1173030605",d:"Jarrinho decorativo com girassol alegre e vibrante"},
+    {n:29,t:"Jarrinho Clorofito",v:"1173030537",d:"Planta clorofito em jarrinho com folhas pendentes realistas"},
+    {n:30,t:"Girassóis",v:"1173030366",d:"Girassóis grandes e impactantes para decoração de ambientes"},
+    {n:31,t:"Girassol Mini",v:"1173030319",d:"Versão compacta do girassol ideal para lembrancinhas"},
+    {n:32,t:"Florzinha Rosa",v:"1173030238",d:"Florzinhas rosas delicadas para arranjos e buquês"},
+    {n:33,t:"Flores Amarelas",v:"1173029960",d:"Conjunto de flores amarelas para composição de arranjos"},
+    {n:34,t:"Flores Variadas",v:"1173030147",d:"Mix de flores diferentes em uma única peça decorativa"},
+    {n:35,t:"Flor Azul Celeste",v:"1173029722",d:"Flor em tom azul celeste com pétalas suaves e elegantes"},
+    {n:36,t:"Flor Azul Royal",v:"1173029876",d:"Modelo sofisticado de flor azul royal para decoração premium"},
+    {n:37,t:"Flor Clássica",v:"1173029295",d:"Modelo clássico de flor versátil para diversas composições"},
+    {n:38,t:"Enfeites de Natal",v:"1173029569",d:"Enfeites natalinos encantadores feitos com fio felpudo"},
+    {n:39,t:"Enfeite de Natal Especial",v:"1173029509",d:"Peça natalina especial com detalhes elaborados"},
+    {n:40,t:"Decoração de Natal",v:"1173029421",d:"Conjunto decorativo natalino completo para sua casa"},
+    {n:41,t:"Aula Bônus – Wall Hanging Flower",v:"1173029178",d:"Técnica internacional de flor para pendurar na parede"},
+    {n:42,t:"Aula Bônus – Easy Flower Craft",v:"1173029082",d:"Método fácil e rápido para criar flores lindas"},
+    {n:43,t:"Aula Bônus – How to Make Flower",v:"1173028815",d:"Tutorial completo de flor com técnica internacional"},
+    {n:44,t:"Aula Bônus – Easy Flower",v:"1173029120",d:"Flor simplificada ideal para iniciantes"},
+    {n:45,t:"Aula Bônus – Flower DIY",v:"1173029378",d:"Projeto DIY de flor criativa e moderna"},
+    {n:46,t:"Aula Bônus – Técnica Especial de Flores",v:"1173030459",d:"Técnica avançada exclusiva para flores profissionais"}
+  ]},
+  { name:"Peças Variadas", img:"https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/991abed0-0a07-4658-9f37-1e897c23f7cc.jpg", lock:false, aulas:[
+    {n:1,t:"DIY Pipe Cleaner Craft",v:"1173028227",d:"Técnica criativa internacional de artesanato com fio felpudo"},
+    {n:2,t:"Peça Criativa 1",v:"1173028477",d:"Modelo exclusivo para surpreender seus clientes"},
+    {n:3,t:"Peça Criativa 2",v:"1173028531",d:"Mais um modelo incrível para seu portfólio de vendas"},
+    {n:4,t:"Peça Criativa 3",v:"1173028655",d:"Peça diferenciada com acabamento premium"},
+    {n:5,t:"Peça Criativa 4",v:"1173028704",d:"Modelo versátil que vende muito bem em feiras"},
+    {n:6,t:"Peça Criativa 5",v:"1173028765",d:"Criação especial com detalhes que encantam"},
+    {n:7,t:"Peça Criativa 6",v:"1173033257",d:"Modelo popular que sempre tem demanda"},
+    {n:8,t:"Peça Criativa 7",v:"1173033081",d:"Peça delicada perfeita para presentes especiais"},
+    {n:9,t:"Peça Criativa 8",v:"1173033345",d:"Modelo inovador com técnica diferenciada"},
+    {n:10,t:"Peça Criativa 9",v:"1173032654",d:"Criação exclusiva do curso Mundo Felpudo"},
+    {n:11,t:"Peça Criativa 10",v:"1173032595",d:"Modelo tendência que está bombando nas redes sociais"},
+    {n:12,t:"Cesta de Orquídea",v:"1173028037",d:"Cesta decorativa com orquídeas elegantes de fio felpudo"},
+    {n:13,t:"Cesta de Morango",v:"1173027675",d:"Cestinha encantadora com morangos realistas"},
+    {n:14,t:"Cesta de Lótus e Libélula",v:"1173027257",d:"Composição delicada com lótus e libélula decorativa"},
+    {n:15,t:"Cesta de Flores",v:"1173027151",d:"Cesta clássica com arranjo floral sortido"},
+    {n:16,t:"Cesta de Flores Especial",v:"1173027044",d:"Versão premium da cesta floral com detalhes extras"},
+    {n:17,t:"Buquês de Flores",v:"1173030147",d:"Aprenda a montar buquês completos para vender"},
+    {n:18,t:"Buquê de Girassóis",v:"1173030605",d:"Buquê alegre de girassóis perfeito para presente"},
+    {n:19,t:"Flor de Narciso",v:"1173029806",d:"Narciso delicado com pétalas e centro detalhados"},
+    {n:20,t:"Peça Especial Exclusiva",v:"1173028594",d:"Modelo exclusivo de encerramento do módulo"}
+  ]},
+  { name:"Animais de Arte Felpuda", img:"https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/088bbcb6-7e1c-4632-9466-3a52ebce28ad.jpg", lock:false, aulas:[
+    {n:1,t:"Tartaruga Estrela",v:"1173033913",d:"Crie uma tartaruga fofa com casco em formato de estrela"},
+    {n:2,t:"Calopsita",v:"1173034005",d:"Calopsita realista com penas detalhadas em fio felpudo"},
+    {n:3,t:"Coelho",v:"1173033809",d:"Coelhinho adorável perfeito para decoração e presente"},
+    {n:4,t:"Esquilo",v:"1173032952",d:"Esquilo encantador com rabo fofinho de fio felpudo"},
+    {n:5,t:"Esquilo 2",v:"1173032895",d:"Segunda versão do esquilo com pose e detalhes diferentes"},
+    {n:6,t:"Borboleta",v:"1173032867",d:"Borboleta colorida com asas delicadas de fio felpudo"},
+    {n:7,t:"Dinossauro",v:"1173032811",d:"Dinossauro divertido e fofo feito com fio felpudo"},
+    {n:8,t:"Elefante",v:"1173032756",d:"Elefante adorável com orelhas grandes e tromba detalhada"},
+    {n:9,t:"Gatinho",v:"1173032707",d:"Gatinho fofíssimo perfeito para presente e decoração"},
+    {n:10,t:"Passarinho",v:"1173032560",d:"Passarinho encantador com asas e penas detalhadas"},
+    {n:11,t:"Cachorrinho",v:"1173032529",d:"Cachorrinho fofo e carismático perfeito para presente"}
+  ]},
+  { name:"Chaveiros de Arte Felpuda", img:"https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/1aea5eb6-1050-42d9-b4a7-7c9a7fd9ddba.jpg", lock:true, aulas:[
+    {n:1,t:"Chaveiro Gato",v:null,d:"Chaveiro fofo de gatinho para vender ou presentear"},
+    {n:2,t:"Chaveiro de Frutas",v:null,d:"Chaveiros coloridos em formato de frutas variadas"},
+    {n:3,t:"Chaveiro de Coração",v:null,d:"Chaveiro em formato de coração ideal para datas especiais"},
+    {n:4,t:"Chaveiro Abelhinha",v:null,d:"Chaveiro fofo de abelha perfeito para vender e presentear"},
+    {n:5,t:"Chaveiro Cereja",v:null,d:"Chaveiro delicado em formato de cereja com detalhes realistas"}
+  ]},
+  { name:"🎁 Bônus + Extras", img:"https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/556e5b96-266b-4a5a-92c8-4127eb5fca48.avif", lock:true, aulas:[
+    {n:1,t:"Detalhes que Encantam",v:null,d:"Aprenda os acabamentos que fazem toda a diferença"},
+    {n:2,t:"As 20 Peças Mais Vendidas de 2025",v:null,d:"Descubra o que mais vende e fature alto"},
+    {n:3,t:"Arte Terapêutica",v:null,d:"O poder transformador da arte com fio felpudo"},
+    {n:4,t:"Método 3 Movimentos",v:null,d:"A técnica simplificada para iniciantes"},
+    {n:5,t:"Fotos que Vendem",v:null,d:"Como fotografar suas peças para vender mais"},
+    {n:6,t:"Lista de Fornecedores",v:null,d:"Lista completa com os melhores fornecedores de fio felpudo"}
+  ]}
+];
+
+let curMod = 0, curIdx = 0, curPlay = [];
+
+function build() {
+  const c = document.getElementById('mods');
+  DATA.forEach((mod, mi) => {
+    curPlay = mod.aulas.filter(a => a.v);
+
+    const btn = document.createElement('button');
+    btn.className = 'mod-btn' + (mi === 0 ? ' open' : '');
+    btn.id = `mb${mi}`;
+    btn.innerHTML = `
+      <img class="mod-img" src="${mod.img}" alt="" onerror="this.style.opacity='.2'">
+      <div class="mod-info">
+        <div class="mod-name">${mod.name}</div>
+        <div class="mod-count">${mod.aulas.length} aulas${mod.lock ? ' · 🔒' : ''}</div>
+      </div>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    `;
+    btn.onclick = () => toggle(mi);
+    c.appendChild(btn);
+
+    const list = document.createElement('div');
+    list.className = 'lessons-list' + (mi === 0 ? ' open' : '');
+    list.id = `ll${mi}`;
+
+    const playable = mod.aulas.filter(a => a.v);
+    mod.aulas.forEach(a => {
+      const locked = mod.lock || !a.v;
+      const pi = playable.findIndex(p => p.t === a.t);
+      const row = document.createElement('div');
+      row.className = 'lesson' + (locked ? ' locked' : '');
+      if (!locked) row.onclick = () => play(mi, pi);
+      row.innerHTML = `
+        <div class="les-num">${a.n}</div>
+        <div class="les-info">
+          <div class="les-t">${a.t}</div>
+          <div class="les-d">${a.d}</div>
+        </div>
+        ${locked
+          ? `<span class="lock-ic">🔒</span><span class="soon-tag">Em breve</span>`
+          : `<div class="play-dot"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>`}
+      `;
+      list.appendChild(row);
+    });
+    c.appendChild(list);
+  });
+}
+
+function toggle(mi) {
+  const btn = document.getElementById(`mb${mi}`);
+  const list = document.getElementById(`ll${mi}`);
+  const isOpen = list.classList.contains('open');
+  document.querySelectorAll('.mod-btn').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.lessons-list').forEach(l => l.classList.remove('open'));
+  if (!isOpen) { btn.classList.add('open'); list.classList.add('open'); }
+}
+
+function play(mi, pi) {
+  curMod = mi; curIdx = pi;
+  curPlay = DATA[mi].aulas.filter(a => a.v);
+  render();
+  document.getElementById('home').style.display = 'none';
+  document.getElementById('player-page').style.display = 'block';
+  document.getElementById('backBtn').style.display = 'flex';
+  window.scrollTo(0, 0);
+}
+
+function render() {
+  const a = curPlay[curIdx];
+  const mod = DATA[curMod];
+  document.getElementById('vimeo').src = `https://player.vimeo.com/video/${a.v}?autoplay=1&title=0&byline=0&portrait=0`;
+  document.getElementById('ltitle').textContent = a.t;
+  document.getElementById('ldesc').textContent = a.d;
+  document.getElementById('bc').innerHTML =
+    `<span class="bc-link" onclick="goHome()">Início</span>
+     <span> › </span><span>${mod.name}</span>
+     <span> › </span><span style="color:var(--txt);font-weight:700">${a.t}</span>`;
+  document.getElementById('navPos').textContent = `${curIdx + 1} de ${curPlay.length}`;
+  document.getElementById('btnPrev').disabled = curIdx === 0;
+  document.getElementById('btnNext').disabled = curIdx === curPlay.length - 1;
+}
+
+function nav(d) {
+  const next = curIdx + d;
+  if (next < 0 || next >= curPlay.length) return;
+  curIdx = next; render(); window.scrollTo(0, 0);
+}
+
+function goHome() {
+  document.getElementById('vimeo').src = '';
+  document.getElementById('player-page').style.display = 'none';
+  document.getElementById('home').style.display = 'block';
+  document.getElementById('backBtn').style.display = 'none';
+}
+
+function copyPix() {
+  navigator.clipboard.writeText('67981512440').then(() => {
+    const btn = document.getElementById('pixBtn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✓ Chave copiada!';
+    btn.style.background = '#4A9E6B';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 2500);
+  });
+}
+
+build();
+</script>
+</body>
+</html>

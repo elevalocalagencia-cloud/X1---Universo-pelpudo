@@ -1,0 +1,678 @@
+﻿[
+    {
+        "module":  {
+                       "title":  "Vídeo Aulas - Fio Felpudo",
+                       "id":  "30225c74-3c5c-4138-bdf8-8c728f13bb18",
+                       "cover":  "https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/7b991036-bdd5-4e12-a1b4-0575fc0e8017.jpg"
+                   },
+        "lessons":  {
+                        "value":  [
+                                      {
+                                          "id":  "b06dd427-3130-4f1a-be38-885d19e7c00b",
+                                          "title":  "Flor de Lotus Iluminada",
+                                          "vimeo_id":  "1173034525",
+                                          "description":  "Crie uma flor de lótus com iluminação embutida para decoração",
+                                          "position":  0
+                                      },
+                                      {
+                                          "id":  "b204a7c0-c77d-468b-8346-82f73ba2ff8c",
+                                          "title":  "Vaso de Lírio do Vale",
+                                          "vimeo_id":  "1173034704",
+                                          "description":  "Crie delicados lírios do vale em miniatura para vasinhos",
+                                          "position":  1
+                                      },
+                                      {
+                                          "id":  "4716bab2-5505-40b2-9755-b3debe7144b3",
+                                          "title":  "Luminária de Flor",
+                                          "vimeo_id":  "1173034893",
+                                          "description":  "Transforme fio felpudo em uma luminária floral funcional e encantadora",
+                                          "position":  2
+                                      },
+                                      {
+                                          "id":  "6694c29c-2c9a-460b-9951-92c6df2b68c0",
+                                          "title":  "Flor de Lírio",
+                                          "vimeo_id":  "1173035095",
+                                          "description":  "Aprenda a modelar lírios elegantes com pétalas detalhadas",
+                                          "position":  3
+                                      },
+                                      {
+                                          "id":  "87a60d6e-78b3-4e3b-abb3-27a89617d4a2",
+                                          "title":  "Lavanda",
+                                          "vimeo_id":  "1173030662",
+                                          "description":  "Técnica para criar ramos de lavanda realistas com fio felpudo",
+                                          "position":  4
+                                      },
+                                      {
+                                          "id":  "dccbdd73-2389-47d0-b565-2b8e3bbc8994",
+                                          "title":  "Vaso Flor Tulipa",
+                                          "vimeo_id":  "1173034211",
+                                          "description":  "Aprenda a montar um lindo vaso com tulipas de fio felpudo passo a passo",
+                                          "position":  5
+                                      },
+                                      {
+                                          "id":  "b71f91ce-e243-4192-89b5-8764b6e42566",
+                                          "title":  "Vaso Flor de Girassol",
+                                          "vimeo_id":  "1173034357",
+                                          "description":  "Monte um vaso decorativo com girassóis realistas de fio felpudo",
+                                          "position":  6
+                                      },
+                                      {
+                                          "id":  "96654ea6-a2c0-4841-b45b-16bdc885d252",
+                                          "title":  "Orquídea",
+                                          "vimeo_id":  "1173031605",
+                                          "description":  "Crie orquídeas sofisticadas perfeitas para presente e decoração",
+                                          "position":  7
+                                      },
+                                      {
+                                          "id":  "b68346c2-f41f-48c8-8a5c-017a6cbcd242",
+                                          "title":  "Vasos de Tulipas",
+                                          "vimeo_id":  "1173032498",
+                                          "description":  "Arranjo completo de vasos com tulipas coloridas de fio felpudo",
+                                          "position":  8
+                                      },
+                                      {
+                                          "id":  "ffcfac29-2463-445d-ae9a-8e5a0af04972",
+                                          "title":  "Vaso de Cravo",
+                                          "vimeo_id":  "1173032330",
+                                          "description":  "Monte cravos realistas com pétalas delicadas em fio felpudo",
+                                          "position":  9
+                                      },
+                                      {
+                                          "id":  "8f537940-4b58-4e02-af3c-630dad458717",
+                                          "title":  "Vasinho de Tulipa + Abelinha",
+                                          "vimeo_id":  "1173032162",
+                                          "description":  "Vasinho fofo de tulipa com uma abelha decorativa em miniatura",
+                                          "position":  10
+                                      },
+                                      {
+                                          "id":  "ea0ac7cc-91a6-4700-bcd8-9c48a80f12e6",
+                                          "title":  "Vasinho de Tulipa Fofa",
+                                          "vimeo_id":  "1173032078",
+                                          "description":  "Versão fofa e compacta de tulipa em vasinho decorativo",
+                                          "position":  11
+                                      },
+                                      {
+                                          "id":  "9df65a19-76cc-4e89-b80c-bbebbe6cd1a0",
+                                          "title":  "Vários Modelos",
+                                          "vimeo_id":  "1173031964",
+                                          "description":  "Aula especial com múltiplos modelos e técnicas variadas",
+                                          "position":  12
+                                      },
+                                      {
+                                          "id":  "2cf29095-14d9-46c3-82f1-70b1bfb9a9e7",
+                                          "title":  "Tulipas",
+                                          "vimeo_id":  "1173031911",
+                                          "description":  "Domine a técnica de criar tulipas perfeitas com fio felpudo",
+                                          "position":  13
+                                      },
+                                      {
+                                          "id":  "62845bf2-ec12-4d76-865f-15be9a7bd405",
+                                          "title":  "Tulipa com 5 Asas",
+                                          "vimeo_id":  "1173031856",
+                                          "description":  "Modelo especial de tulipa com 5 pétalas abertas e elegantes",
+                                          "position":  14
+                                      },
+                                      {
+                                          "id":  "9b78df95-b9df-4b0c-baaf-c0318a84ebf0",
+                                          "title":  "Suculentas",
+                                          "vimeo_id":  "1173031748",
+                                          "description":  "Crie suculentas realistas que nunca precisam de água",
+                                          "position":  15
+                                      },
+                                      {
+                                          "id":  "00596049-55b3-4251-bd75-3271939cda65",
+                                          "title":  "Ramos de Flores",
+                                          "vimeo_id":  "1173031694",
+                                          "description":  "Arranjos de ramos florais para buquês e decoração",
+                                          "position":  16
+                                      },
+                                      {
+                                          "id":  "8b5ba081-bf4a-4790-88ca-9ac0b2c3ac9d",
+                                          "title":  "Orquídea v2",
+                                          "vimeo_id":  "1173035236",
+                                          "description":  "Nova técnica para orquídeas com detalhes aprimorados",
+                                          "position":  17
+                                      },
+                                      {
+                                          "id":  "338c495c-7645-4592-817c-a5baf1e52636",
+                                          "title":  "Narcissus com Caules",
+                                          "vimeo_id":  "1173031511",
+                                          "description":  "Flores de narciso com caules longos e folhagem natural",
+                                          "position":  18
+                                      },
+                                      {
+                                          "id":  "f59aca42-0747-43d7-ae9b-93b5adaea343",
+                                          "title":  "Mini Vaso de Hortênsia",
+                                          "vimeo_id":  "1173031363",
+                                          "description":  "Mini vaso encantador com hortênsias delicadas",
+                                          "position":  19
+                                      },
+                                      {
+                                          "id":  "b417a84d-0182-4eca-930e-f500f60f98f2",
+                                          "title":  "Mini Cesta de Lótus",
+                                          "vimeo_id":  "1173031287",
+                                          "description":  "Cestinha decorativa com flores de lótus em miniatura",
+                                          "position":  20
+                                      },
+                                      {
+                                          "id":  "17060f11-f46f-4841-b3b4-afabcb6aeaba",
+                                          "title":  "Mini Buquê de Flores",
+                                          "vimeo_id":  "1173031245",
+                                          "description":  "Buquê compacto perfeito para lembrancinhas e presentes",
+                                          "position":  21
+                                      },
+                                      {
+                                          "id":  "9eb3ea40-fc65-4acf-b924-82fdb3abdf68",
+                                          "title":  "Margarida Azul",
+                                          "vimeo_id":  "1173031156",
+                                          "description":  "Margaridas azuis vibrantes com técnica de pétalas arredondadas",
+                                          "position":  22
+                                      },
+                                      {
+                                          "id":  "b431eb26-7e82-4ee3-b843-c0391bc79f3d",
+                                          "title":  "Lírios Amarelos",
+                                          "vimeo_id":  "1173031110",
+                                          "description":  "Lírios em tom amarelo ouro com folhagem natural",
+                                          "position":  23
+                                      },
+                                      {
+                                          "id":  "7d8ecdac-6048-4f01-b2dd-ea840436cb16",
+                                          "title":  "Lírio com Hastes de Chenille",
+                                          "vimeo_id":  "1173030979",
+                                          "description":  "Técnica especial usando hastes de chenille para lírios",
+                                          "position":  24
+                                      },
+                                      {
+                                          "id":  "4ff178d0-73ba-454e-816c-c754bb2f37da",
+                                          "title":  "Limão Decorativo",
+                                          "vimeo_id":  "1173030725",
+                                          "description":  "Peça decorativa em formato de limão com acabamento realista",
+                                          "position":  25
+                                      },
+                                      {
+                                          "id":  "e18cdfc0-1e26-4fbb-b79f-ae0d9097caaa",
+                                          "title":  "Lavanda v2",
+                                          "vimeo_id":  "1173030055",
+                                          "description":  "Técnica avançada para ramos de lavanda em arranjo",
+                                          "position":  26
+                                      },
+                                      {
+                                          "id":  "1a406928-9bc3-426a-8b9f-a78b52ad5603",
+                                          "title":  "Jarrinho Girassol",
+                                          "vimeo_id":  "1173030605",
+                                          "description":  "Jarrinho decorativo com girassol alegre e vibrante",
+                                          "position":  27
+                                      },
+                                      {
+                                          "id":  "b8dafa52-43ab-4be5-9c4c-7570442138f6",
+                                          "title":  "Jarrinho Clorofito",
+                                          "vimeo_id":  "1173030537",
+                                          "description":  "Planta clorofito em jarrinho com folhas pendentes realistas",
+                                          "position":  28
+                                      },
+                                      {
+                                          "id":  "b9e882db-fdee-4398-b32e-e1f236484a5c",
+                                          "title":  "Girassóis",
+                                          "vimeo_id":  "1173030366",
+                                          "description":  "Girassóis grandes e impactantes para decoração de ambientes",
+                                          "position":  29
+                                      },
+                                      {
+                                          "id":  "fd5ff289-eb8b-4c1f-b7c5-b0a0dafbb579",
+                                          "title":  "Girassol Mini",
+                                          "vimeo_id":  "1173030319",
+                                          "description":  "Versão compacta do girassol ideal para lembrancinhas",
+                                          "position":  30
+                                      },
+                                      {
+                                          "id":  "503fe52a-36a5-4cbe-9414-eacbfe620dbd",
+                                          "title":  "Florzinha Rosa",
+                                          "vimeo_id":  "1173030238",
+                                          "description":  "Florzinhas rosas delicadas para arranjos e buquês",
+                                          "position":  31
+                                      },
+                                      {
+                                          "id":  "46f233b3-7bef-4e85-bcaf-3961c54870c5",
+                                          "title":  "Flores Amarelas",
+                                          "vimeo_id":  "1173029960",
+                                          "description":  "Conjunto de flores amarelas para composição de arranjos",
+                                          "position":  32
+                                      },
+                                      {
+                                          "id":  "c96cf546-55f8-4203-8819-9470b7a53a26",
+                                          "title":  "Flores Variadas",
+                                          "vimeo_id":  "1173030147",
+                                          "description":  "Mix de flores diferentes em uma única peça decorativa",
+                                          "position":  33
+                                      },
+                                      {
+                                          "id":  "8d6aed0e-3537-49aa-9ce8-63551d62ee17",
+                                          "title":  "Flor Azul Celeste",
+                                          "vimeo_id":  "1173029722",
+                                          "description":  "Flor em tom azul celeste com pétalas suaves e elegantes",
+                                          "position":  34
+                                      },
+                                      {
+                                          "id":  "d254d648-a283-4eec-b5f7-513798e34ecf",
+                                          "title":  "Flor Azul Royal",
+                                          "vimeo_id":  "1173029876",
+                                          "description":  "Modelo sofisticado de flor azul royal para decoração premium",
+                                          "position":  35
+                                      },
+                                      {
+                                          "id":  "d02f02d3-6945-4806-9dae-bf870b7ab0bc",
+                                          "title":  "Flor Clássica",
+                                          "vimeo_id":  "1173029295",
+                                          "description":  "Modelo clássico de flor versátil para diversas composições",
+                                          "position":  36
+                                      },
+                                      {
+                                          "id":  "d9bb62d1-d352-455b-be5c-eeb947fb3560",
+                                          "title":  "Enfeites de Natal",
+                                          "vimeo_id":  "1173029569",
+                                          "description":  "Enfeites natalinos encantadores feitos com fio felpudo",
+                                          "position":  37
+                                      },
+                                      {
+                                          "id":  "3a74eb5f-e865-4921-b30e-dd733e70c25a",
+                                          "title":  "Enfeite de Natal Especial",
+                                          "vimeo_id":  "1173029509",
+                                          "description":  "Peça natalina especial com detalhes elaborados",
+                                          "position":  38
+                                      },
+                                      {
+                                          "id":  "d04c238d-fc66-4b10-a872-9f5d6220c82e",
+                                          "title":  "Decoração de Natal",
+                                          "vimeo_id":  "1173029421",
+                                          "description":  "Conjunto decorativo natalino completo para sua casa",
+                                          "position":  39
+                                      },
+                                      {
+                                          "id":  "a0ec2531-aee8-45cf-8567-1d5f6f4a3f9a",
+                                          "title":  "Aula Bônus – Wall Hanging Flower",
+                                          "vimeo_id":  "1173029178",
+                                          "description":  "Técnica internacional de flor para pendurar na parede",
+                                          "position":  40
+                                      },
+                                      {
+                                          "id":  "60038f63-b585-4cf1-a0dc-56d409445a5b",
+                                          "title":  "Aula Bônus – Easy Flower Craft",
+                                          "vimeo_id":  "1173029082",
+                                          "description":  "Método fácil e rápido para criar flores lindas",
+                                          "position":  41
+                                      },
+                                      {
+                                          "id":  "3da9d28d-e753-4d7f-afbb-c29ca656c509",
+                                          "title":  "Aula Bônus – How to Make Flower",
+                                          "vimeo_id":  "1173028815",
+                                          "description":  "Tutorial completo de flor com técnica internacional",
+                                          "position":  42
+                                      },
+                                      {
+                                          "id":  "14d8ce39-3c07-4232-b76a-6af0d18f7281",
+                                          "title":  "Aula Bônus – Easy Flower",
+                                          "vimeo_id":  "1173029120",
+                                          "description":  "Flor simplificada ideal para iniciantes",
+                                          "position":  43
+                                      },
+                                      {
+                                          "id":  "2c53a8a5-ad6b-4daa-a2d6-21e560df78bd",
+                                          "title":  "Aula Bônus – Flower DIY",
+                                          "vimeo_id":  "1173029378",
+                                          "description":  "Projeto DIY de flor criativa e moderna",
+                                          "position":  44
+                                      },
+                                      {
+                                          "id":  "1b42dd9f-88ff-4685-86f5-01423fd71a6e",
+                                          "title":  "Aula Bônus – Técnica Especial de Flores",
+                                          "vimeo_id":  "1173030459",
+                                          "description":  "Técnica avançada exclusiva para flores profissionais",
+                                          "position":  45
+                                      }
+                                  ],
+                        "Count":  46
+                    }
+    },
+    {
+        "module":  {
+                       "title":  "Peças Variadas",
+                       "id":  "5ea757d4-5488-47af-9d96-549e5bbcf8a3",
+                       "cover":  "https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/991abed0-0a07-4658-9f37-1e897c23f7cc.jpg"
+                   },
+        "lessons":  {
+                        "value":  [
+                                      {
+                                          "id":  "3bd9bfc5-c2ed-44dc-a236-32f96b15c1d4",
+                                          "title":  "DIY Pipe Cleaner Craft",
+                                          "vimeo_id":  "1173028227",
+                                          "description":  "Técnica criativa internacional de artesanato com fio felpudo",
+                                          "position":  1
+                                      },
+                                      {
+                                          "id":  "2190be32-4bed-4368-9c49-d14085e1f663",
+                                          "title":  "Peça Criativa 1",
+                                          "vimeo_id":  "1173028477",
+                                          "description":  "Modelo exclusivo para surpreender seus clientes",
+                                          "position":  2
+                                      },
+                                      {
+                                          "id":  "12b728ed-82ed-4c86-a75a-ebb1a3fe87ba",
+                                          "title":  "Peça Criativa 2",
+                                          "vimeo_id":  "1173028531",
+                                          "description":  "Mais um modelo incrível para seu portfólio de vendas",
+                                          "position":  3
+                                      },
+                                      {
+                                          "id":  "0f71335c-17f1-4f97-ae9d-14949ea83976",
+                                          "title":  "Peça Criativa 3",
+                                          "vimeo_id":  "1173028655",
+                                          "description":  "Peça diferenciada com acabamento premium",
+                                          "position":  4
+                                      },
+                                      {
+                                          "id":  "d9d39dd8-a611-4d0b-aed6-6638332add59",
+                                          "title":  "Peça Criativa 4",
+                                          "vimeo_id":  "1173028704",
+                                          "description":  "Modelo versátil que vende muito bem em feiras",
+                                          "position":  5
+                                      },
+                                      {
+                                          "id":  "d08a972b-9301-466d-93b2-ddbe23b88edc",
+                                          "title":  "Peça Criativa 5",
+                                          "vimeo_id":  "1173028765",
+                                          "description":  "Criação especial com detalhes que encantam",
+                                          "position":  6
+                                      },
+                                      {
+                                          "id":  "a3ea3730-3579-4b60-aafa-8eb1eb7e65bf",
+                                          "title":  "Peça Criativa 6",
+                                          "vimeo_id":  "1173033257",
+                                          "description":  "Modelo popular que sempre tem demanda",
+                                          "position":  7
+                                      },
+                                      {
+                                          "id":  "d14f02f6-e751-4dd8-999c-6894e47de988",
+                                          "title":  "Peça Criativa 7",
+                                          "vimeo_id":  "1173033081",
+                                          "description":  "Peça delicada perfeita para presentes especiais",
+                                          "position":  8
+                                      },
+                                      {
+                                          "id":  "609c8502-12e0-4fc3-b9e4-d81eba7648ea",
+                                          "title":  "Peça Criativa 8",
+                                          "vimeo_id":  "1173033345",
+                                          "description":  "Modelo inovador com técnica diferenciada",
+                                          "position":  9
+                                      },
+                                      {
+                                          "id":  "70578212-a8c0-4828-895d-5d5945de740a",
+                                          "title":  "Peça Criativa 9",
+                                          "vimeo_id":  "1173032654",
+                                          "description":  "Criação exclusiva do curso Universo Felpudo",
+                                          "position":  10
+                                      },
+                                      {
+                                          "id":  "286b6e52-5b10-486a-b377-bad47c452ebe",
+                                          "title":  "Peça Criativa 10",
+                                          "vimeo_id":  "1173032595",
+                                          "description":  "Modelo tendência que está bombando nas redes sociais",
+                                          "position":  11
+                                      },
+                                      {
+                                          "id":  "9856b4c5-40a0-4893-b0c4-b4675f0401a2",
+                                          "title":  "Cesta de Orquídea",
+                                          "vimeo_id":  "1173028037",
+                                          "description":  "Cesta decorativa com orquídeas elegantes de fio felpudo",
+                                          "position":  12
+                                      },
+                                      {
+                                          "id":  "37d56dec-0675-48d9-a32d-9c6c6a8c4112",
+                                          "title":  "Cesta de Morango",
+                                          "vimeo_id":  "1173027675",
+                                          "description":  "Cestinha encantadora com morangos realistas",
+                                          "position":  13
+                                      },
+                                      {
+                                          "id":  "0970fe92-5f16-4c7e-a399-bd980aecae52",
+                                          "title":  "Cesta de Lótus e Libélula",
+                                          "vimeo_id":  "1173027257",
+                                          "description":  "Composição delicada com lótus e libélula decorativa",
+                                          "position":  14
+                                      },
+                                      {
+                                          "id":  "c9bb6f87-79fb-4074-bf62-d4fd491aae5e",
+                                          "title":  "Cesta de Flores",
+                                          "vimeo_id":  "1173027151",
+                                          "description":  "Cesta clássica com arranjo floral sortido",
+                                          "position":  15
+                                      },
+                                      {
+                                          "id":  "8ec16830-cefb-4b8b-9062-26ffb7637140",
+                                          "title":  "Cesta de Flores Especial",
+                                          "vimeo_id":  "1173027044",
+                                          "description":  "Versão premium da cesta floral com detalhes extras",
+                                          "position":  16
+                                      },
+                                      {
+                                          "id":  "3e75bdab-6270-4a4b-89da-0efd86c75274",
+                                          "title":  "Buquês de Flores",
+                                          "vimeo_id":  "1173030147",
+                                          "description":  "Aprenda a montar buquês completos para vender",
+                                          "position":  17
+                                      },
+                                      {
+                                          "id":  "12d43054-fbb5-42e0-a717-de0d900996a3",
+                                          "title":  "Buquê de Girassóis",
+                                          "vimeo_id":  "1173030605",
+                                          "description":  "Buquê alegre de girassóis perfeito para presente",
+                                          "position":  18
+                                      },
+                                      {
+                                          "id":  "626c0040-cb08-4783-aec9-61c1f670765f",
+                                          "title":  "Flor de Narciso",
+                                          "vimeo_id":  "1173029806",
+                                          "description":  "Narciso delicado com pétalas e centro detalhados",
+                                          "position":  19
+                                      },
+                                      {
+                                          "id":  "dc2c7c4c-95f9-4610-9080-4066f353c8fa",
+                                          "title":  "Peça Especial Exclusiva",
+                                          "vimeo_id":  "1173028594",
+                                          "description":  "Modelo exclusivo de encerramento do módulo",
+                                          "position":  20
+                                      }
+                                  ],
+                        "Count":  20
+                    }
+    },
+    {
+        "module":  {
+                       "title":  "Animais de Arte Felpuda",
+                       "id":  "4b441d17-8219-4682-814f-c916b9e1b22f",
+                       "cover":  "https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/088bbcb6-7e1c-4632-9466-3a52ebce28ad.jpg"
+                   },
+        "lessons":  {
+                        "value":  [
+                                      {
+                                          "id":  "4e81e6dc-ee7c-43d7-8622-8c65959405cd",
+                                          "title":  "Tartaruga Estrela",
+                                          "vimeo_id":  "1173033913",
+                                          "description":  "Crie uma tartaruga fofa com casco em formato de estrela",
+                                          "position":  1
+                                      },
+                                      {
+                                          "id":  "aff66372-205b-4fb8-b236-925c1a6c44c3",
+                                          "title":  "Calopsita",
+                                          "vimeo_id":  "1173034005",
+                                          "description":  "Calopsita realista com penas detalhadas em fio felpudo",
+                                          "position":  2
+                                      },
+                                      {
+                                          "id":  "2d825a2d-017c-42ef-a751-f9441f6a16f5",
+                                          "title":  "Coelho",
+                                          "vimeo_id":  "1173033809",
+                                          "description":  "Coelhinho adorável perfeito para decoração e presente",
+                                          "position":  3
+                                      },
+                                      {
+                                          "id":  "922a00c2-be7a-4da0-ab46-af8b44a212f7",
+                                          "title":  "Esquilo",
+                                          "vimeo_id":  "1173032952",
+                                          "description":  "Esquilo encantador com rabo fofinho de fio felpudo",
+                                          "position":  4
+                                      },
+                                      {
+                                          "id":  "3bdde61a-2584-4c53-a4da-271604bf7866",
+                                          "title":  "Esquilo 2",
+                                          "vimeo_id":  "1173032895",
+                                          "description":  "Segunda versão do esquilo com pose e detalhes diferentes",
+                                          "position":  5
+                                      },
+                                      {
+                                          "id":  "428e5437-dc24-4ecf-a330-69b1a3b2e428",
+                                          "title":  "Borboleta",
+                                          "vimeo_id":  "1173032867",
+                                          "description":  "Borboleta colorida com asas delicadas de fio felpudo",
+                                          "position":  6
+                                      },
+                                      {
+                                          "id":  "ec5c072b-5757-4f82-840d-8f6f1c3a1388",
+                                          "title":  "Dinossauro",
+                                          "vimeo_id":  "1173032811",
+                                          "description":  "Dinossauro divertido e fofo feito com fio felpudo",
+                                          "position":  7
+                                      },
+                                      {
+                                          "id":  "1affc696-1806-41a3-b945-3ba87eec8c43",
+                                          "title":  "Elefante",
+                                          "vimeo_id":  "1173032756",
+                                          "description":  "Elefante adorável com orelhas grandes e tromba detalhada",
+                                          "position":  8
+                                      },
+                                      {
+                                          "id":  "cae94d2a-aec4-4246-a9b4-e35cfe7d57eb",
+                                          "title":  "Gatinho",
+                                          "vimeo_id":  "1173032707",
+                                          "description":  "Gatinho fofíssimo perfeito para presente e decoração",
+                                          "position":  9
+                                      },
+                                      {
+                                          "id":  "5ff18ec7-2b52-4cba-b4a7-1e2053875e4d",
+                                          "title":  "Passarinho",
+                                          "vimeo_id":  "1173032560",
+                                          "description":  "Passarinho encantador com asas e penas detalhadas em fio felpudo",
+                                          "position":  10
+                                      },
+                                      {
+                                          "id":  "e7c40130-8542-4c68-8fed-367a3559efa7",
+                                          "title":  "Cachorrinho",
+                                          "vimeo_id":  "1173032529",
+                                          "description":  "Cachorrinho fofo e carismático perfeito para presente e decoração",
+                                          "position":  11
+                                      }
+                                  ],
+                        "Count":  11
+                    }
+    },
+    {
+        "module":  {
+                       "title":  "Chaveiros de Arte Felpuda",
+                       "id":  "10919ce6-1b08-4a89-a359-c8b1ce6b15e3",
+                       "cover":  "https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/1aea5eb6-1050-42d9-b4a7-7c9a7fd9ddba.jpg"
+                   },
+        "lessons":  {
+                        "value":  [
+                                      {
+                                          "id":  "1e820d64-5845-492f-8742-55655ecbc2b8",
+                                          "title":  "Chaveiro Gato",
+                                          "vimeo_id":  null,
+                                          "description":  "Chaveiro fofo de gatinho para vender ou presentear",
+                                          "position":  1
+                                      },
+                                      {
+                                          "id":  "340e0aa3-62ad-4c5c-aaf0-e9762275d507",
+                                          "title":  "Chaveiro de Frutas",
+                                          "vimeo_id":  null,
+                                          "description":  "Chaveiros coloridos em formato de frutas variadas",
+                                          "position":  2
+                                      },
+                                      {
+                                          "id":  "f91494af-0ccf-4c4d-9fd5-5cee32257199",
+                                          "title":  "Chaveiro de Coração",
+                                          "vimeo_id":  null,
+                                          "description":  "Chaveiro em formato de coração ideal para datas especiais",
+                                          "position":  3
+                                      },
+                                      {
+                                          "id":  "3000919e-fc00-438e-8796-23278cb6bf67",
+                                          "title":  "Chaveiro Abelhinha",
+                                          "vimeo_id":  null,
+                                          "description":  "Chaveiro fofo de abelha perfeito para vender e presentear",
+                                          "position":  4
+                                      },
+                                      {
+                                          "id":  "8d39fe15-0d4f-4163-aa2e-25fac4829309",
+                                          "title":  "Chaveiro Cereja",
+                                          "vimeo_id":  null,
+                                          "description":  "Chaveiro delicado em formato de cereja com detalhes realistas",
+                                          "position":  5
+                                      }
+                                  ],
+                        "Count":  5
+                    }
+    },
+    {
+        "module":  {
+                       "title":  "🎁 Bônus + Extras",
+                       "id":  "611c3526-12b2-4adf-b613-415b705b149c",
+                       "cover":  "https://opsofzntidohsxbyqmbm.supabase.co/storage/v1/object/public/app-images/module-covers/556e5b96-266b-4a5a-92c8-4127eb5fca48.avif"
+                   },
+        "lessons":  {
+                        "value":  [
+                                      {
+                                          "id":  "14334783-7e1d-4f40-acc7-2f92246a8847",
+                                          "title":  "Detalhes que Encantam",
+                                          "vimeo_id":  null,
+                                          "description":  "Aprenda os acabamentos que fazem toda a diferença",
+                                          "position":  1
+                                      },
+                                      {
+                                          "id":  "55c21e93-403f-41ee-b6bb-807e74c9e2c6",
+                                          "title":  "As 20 Peças Mais Vendidas de 2025",
+                                          "vimeo_id":  null,
+                                          "description":  "Descubra o que mais vende e fature alto",
+                                          "position":  2
+                                      },
+                                      {
+                                          "id":  "1c94a7c7-5b2b-4b37-8a0a-5fb270f0e466",
+                                          "title":  "Arte Terapêutica",
+                                          "vimeo_id":  null,
+                                          "description":  "O poder transformador da arte com fio felpudo",
+                                          "position":  3
+                                      },
+                                      {
+                                          "id":  "46d4a40d-abd5-4678-b638-6a75f71c47ec",
+                                          "title":  "Método 3 Movimentos",
+                                          "vimeo_id":  null,
+                                          "description":  "A técnica simplificada para iniciantes",
+                                          "position":  5
+                                      },
+                                      {
+                                          "id":  "ecfda33f-af70-43a6-aead-c141a5e4ba77",
+                                          "title":  "Fotos que Vendem",
+                                          "vimeo_id":  null,
+                                          "description":  "Como fotografar suas peças para vender mais",
+                                          "position":  6
+                                      },
+                                      {
+                                          "id":  "2628e4b0-5997-4081-bfff-3249ddf3a16c",
+                                          "title":  "Lista de Fornecedores",
+                                          "vimeo_id":  null,
+                                          "description":  "Lista completa com os melhores fornecedores de fio felpudo e chenille",
+                                          "position":  7
+                                      }
+                                  ],
+                        "Count":  6
+                    }
+    }
+]
